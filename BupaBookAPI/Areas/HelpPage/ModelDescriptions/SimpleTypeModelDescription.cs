@@ -1,0 +1,6 @@
+namespace BupaBookAPI.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}
