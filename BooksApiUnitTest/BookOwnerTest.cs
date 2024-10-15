@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BupaBookAPI.Models;
 using System.Collections.Generic;
-using System;
 
 namespace BooksApiUnitTest
 {
@@ -10,14 +9,26 @@ namespace BooksApiUnitTest
     {
 
         /// <summary>
-        /// This test method will check if data is available at source system
+        /// This test method will check if data for children book owners is available at source system
         /// </summary>
         [TestMethod]
-        public void SourceDataTest()
+        public void SourceDataChildrenTest()
         {
             BookOwner bookOwner = new BookOwner();
             List<BookOwner> bookOwners = new List<BookOwner>();
             bookOwners = bookOwner.getDataAsync("Children").Result;
+            Assert.IsTrue(bookOwners.Count > 0);
+        }
+
+        /// <summary>
+        /// This test method will check if data for adult book owners is available at source system
+        /// </summary>
+        [TestMethod]
+        public void SourceDataAdultTest()
+        {
+            BookOwner bookOwner = new BookOwner();
+            List<BookOwner> bookOwners = new List<BookOwner>();
+            bookOwners = bookOwner.getDataAsync("Adult").Result;
             Assert.IsTrue(bookOwners.Count > 0);
         }
     }

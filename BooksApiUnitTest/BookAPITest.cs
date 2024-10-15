@@ -1,10 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BupaBookAPI.Controllers;
 using BupaBookAPI.Models;
-using System;
 using System.Net.Http;
 using System.Net;
-using System.Web;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Collections.Generic;

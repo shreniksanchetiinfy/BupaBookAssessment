@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -66,6 +64,7 @@ namespace BupaBookAPI.Models
             }
             if (bookOwners != null)
             {
+                //looping through the data from source API to add a data to new field "ageCategory"
                 foreach (BookOwner bkOwner in bookOwners)
                 {
                     bkOwner.ageCategory = bkOwner.age >= 18 ? "Adult" : "Children";
@@ -77,6 +76,7 @@ namespace BupaBookAPI.Models
             }
             else
             {
+                //if the data is not returned or the status code is not OK then return the blank object to avoid unnecessary errors
                 return new List<BookOwner>();
             }
         }
